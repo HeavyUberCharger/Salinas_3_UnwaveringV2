@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="50" height="100" tilewidth="64" tileheight="64" nextobjectid="1">
+ <tileset firstgid="1" name="tile_1" tilewidth="64" tileheight="64" tilecount="25">
+  <image source="tile_1.png" width="320" height="320"/>
+ </tileset>
+ <tileset firstgid="26" name="tile_2" tilewidth="64" tileheight="64" tilecount="25">
+  <image source="tile_2.png" width="320" height="320"/>
+  <tile id="0">
+   <properties>
+    <property name="blocked" value="true"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="51" name="newtileset" tilewidth="64" tileheight="64" tilecount="9">
+  <image source="../../../Downloads/Prototyping Tiles.png" width="192" height="192"/>
+ </tileset>
+ <tileset firstgid="60" name="grass" tilewidth="64" tileheight="64" tilecount="256">
+  <image source="terrain_atlas.png" width="1024" height="1024"/>
+  <tile id="200">
+   <properties>
+    <property name="blocked" value="true"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="316" name="grass1" tilewidth="64" tileheight="64" tilecount="256">
+  <image source="terrain_atlas.png" width="1024" height="1024"/>
+  <tile id="200">
+   <properties>
+    <property name="blocked" value="true"/>
+   </properties>
+  </tile>
+ </tileset>
+ <layer name="bottom" width="50" height="100">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3DMQ0AAAwDoM6/pnqrjD2Q0Euqqqqqqqqqqqqqqqqqqqqqqqqq6vsB4BwPvCBOAAA=
+  </data>
+ </layer>
+ <layer name="walls" width="50" height="100">
+  <properties>
+   <property name="blocked" value="true"/>
+  </properties>
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+2UUW6EMAwFacX9b9S79R+B/V5ib2AZSyPtQuJ4iJP9d9v2L+Eszt5F47M4zo3yuGus9MjGVuVWPdS9HvVQ+qfKQ61NrS/qvzt6RGOvxn3Cw7lTZjw67qvKvspqulpvtYdTa/TOOXtn4495K/tKvQOU3JX7cVarUrczL6r7+L/LQ83Z6eHwVo8sx+q+imJ2P5T8b/Bwe8zpw3C9n5gRD+cbZCF7NOyHM1ddL1tjpYcyL9uPY26nN5XzMfpu+Hw031fdHlFdUXR6ZPOzZ87dt9LDrcsJxVvxuKrdrWM0Zvay08M9+9m4zGOWu3hURcU3impe6XE1Lnue3ZGqd1WfrfL428bJco/+xuP5HpXnI6qh02M2VI+otmj82zyq+qq6D12P2Xi7h+rpvqtcp6vvom949/14ugcAAAAAAAAAAAAAAAAAAAAAAAAAAADAE/gH1e6LLCBOAAA=
+  </data>
+ </layer>
+</map>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="50" height="100" tilewidth="64" tileheight="64" nextobjectid="1">
+ <tileset firstgid="1" name="tile_1" tilewidth="64" tileheight="64" tilecount="25">
+  <image source="tile_1.png" width="320" height="320"/>
+ </tileset>
+ <tileset firstgid="26" name="tile_2" tilewidth="64" tileheight="64" tilecount="25">
+  <image source="tile_2.png" width="320" height="320"/>
+  <tile id="0">
+   <properties>
+    <property name="blocked" value="true"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="51" name="newtileset" tilewidth="64" tileheight="64" tilecount="9">
+  <image source="../../../Downloads/Prototyping Tiles.png" width="192" height="192"/>
+ </tileset>
+ <tileset firstgid="60" name="grass" tilewidth="64" tileheight="64" tilecount="256">
+  <image source="terrain_atlas.png" width="1024" height="1024"/>
+  <tile id="200">
+   <properties>
+    <property name="blocked" value="true"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="316" name="grass1" tilewidth="64" tileheight="64" tilecount="256">
+  <image source="terrain_atlas.png" width="1024" height="1024"/>
+  <tile id="200">
+   <properties>
+    <property name="blocked" value="true"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="572" name="fall" tilewidth="64" tileheight="64" tilecount="1">
+  <image source="drop.png" width="93" height="82"/>
+  <tile id="0">
+   <properties>
+    <property name="blocked" value="true"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="573" name="ground" tilewidth="64" tileheight="64" tilecount="1">
+  <image source="bgs.png" width="64" height="64"/>
+ </tileset>
+ <layer name="bottom" width="50" height="100">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3QMQ6DMAxAUYuhpSrlRrn/teoOFYgNKYSA3pfekCWxU4aIAgAAAAAAAAAAAABU9YiIZxrTK5bz2XOtzTnPO03pE/vO27vWtZi9VnvfqP1+rY76n9bZo6/usMMve/SVPfrqP//V95AkSZIkSZIkSbpbX466C4cgTgAA
+  </data>
+ </layer>
+ <layer name="Tile Layer 3" width="50" height="100">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+2VUQ7CIBAFjeeq97+W6ZdJo923y6NQHJOJRhGY5S3dno/HtgivA9uPz2fjKr+75vtXj+PY6Hxn8nDV15H76HtXvVrHZ+uS8Wit2ywerefRkptv/ZhdZ0SuMn3eeh4j+6mXR7V39vf9dZabzJ3u8MjW+ez/0d7U50e1tjN6VPOcyYDiEa3X0yN7Bld4KGv09Gh51jg9sk5nHkouXGvc0SOTA0etlL5xeUTrVNdQxjlzdUcPV5aquerhka07Hv08Kn2Ah8+jpZ+j8SPOQ7kfs+N7eqh1nNlD7QPVY1SunB7qPE6PCrN5qFTu1BU8lLN0eCh5cd1dV5+HmpGVPDI9f8W9m615pe6jPdTedHlk6qrmSp1zJQ/l7ov2o96bqoeK4qvUJ5pL2WvWI6rDKI+7E/m35ggAAAAAAAAAAAAAAAAAAAAAAAAAAAA+vAHy83cWIE4AAA==
+  </data>
+ </layer>
+ <layer name="walls" width="50" height="100">
+  <properties>
+   <property name="blocked" value="true"/>
+  </properties>
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+2VW67DMAgFq+ouK93/tvp5q8iGA8aO0w7SSFXAj0lsejwfj+NLOMfns1ZeySn5qvl+1eNc633fnTwi61j1Fefee57Z14z6yHxRj9H3totHbx61fuTctO6j5aH04qxHZX3l97jyPs3yyN6d3r6VuWd5qOO8317OWi/7fu/gEQm112Q8vPXOzys9lNxqD2WNmR4j/zWVHlEny8OLip7Yq7fGZtew5q/8HtEeFzlXqzy8dbJrKHWV58qKXT3O47NnKXuuZnhY+4j8buXw0NboBR7t3CyPkfvs1a/06OUUD6++NabKQ32PO3tYkfG46lxZEfVQ56n0yLCbhxqZnurN0xq/m4fyLSs8lPNS1bu8/Yx4ZPeh7vEuHpE7v6LvWntVctF3coWHejd745V6tedkz5U65zd5KL3P24/aN1UPlUhkep+Xt/ZyV4+7Ux2v5z9q3ShH4VwAAAAAAAAAAAAAAAAAAPCb/AEAAAAAACziDYo+ItwgTgAA
+  </data>
+ </layer>
+</map>
