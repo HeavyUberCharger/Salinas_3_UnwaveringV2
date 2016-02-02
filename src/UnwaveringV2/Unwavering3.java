@@ -1,5 +1,9 @@
 package UnwaveringV2;
 
+import static UnwaveringV2.Player.down;
+import static UnwaveringV2.Player.left;
+import static UnwaveringV2.Player.right;
+import static UnwaveringV2.Player.up;
 import org.newdawn.slick.state.*;
 
 import java.io.IOException;
@@ -71,7 +75,7 @@ class blocked {
 
 public class Unwavering3 extends BasicGameState {
 
-	
+	public Player player;
 	public Item healthpotion, healthpotion1;
 	public Item1 speedpotion, speedpotion1;
         public Itembonus bonusitem,bonusitem1,bonusitem2, bonusitem3, bonusitem4, bonusitem5, bonusitem6, bonusitem7, bonusitem8,bonusitem9;
@@ -97,7 +101,7 @@ public class Unwavering3 extends BasicGameState {
 
 	// Player stuff
 
-	private Animation sprite, up, down, left, right, wait;
+	
 
 	/**
 	 * 
@@ -137,131 +141,16 @@ public class Unwavering3 extends BasicGameState {
 		grassMap = new TiledMap("res/d3.tmx");
 
 		// Ongoing checks are useful
-
-		System.out.println("Tile map is this wide: " + grassMap.getWidth());
+                //this checks how large the map is
+		//System.out.println("Tile map is this wide: " + grassMap.getWidth());
 
 		camera = new Camera(gc, grassMap);
+                
+                player = new Player();
 
-		// *********************************************************************************
+		
 
-		// Player stuff --- these things should probably be chunked into methods
-		// and classes
-
-		// *********************************************************************************
-
-		SpriteSheet runningSS = new SpriteSheet(
-				"res/ogrespritesheet.png",64, 64, 0);
-
-		//System.out.println("Horizontal count: "
-		 //+runningSS.getHorizontalCount());
-
-		//System.out.println("Vertical count: " +runningSS.getVerticalCount());
-
-		up = new Animation();
-
-		up.setAutoUpdate(true);
-
-		up.addFrame(runningSS.getSprite(0, 8), 330);
-
-		up.addFrame(runningSS.getSprite(1, 8), 330);
-
-		up.addFrame(runningSS.getSprite(2, 8), 330);
-
-		up.addFrame(runningSS.getSprite(3, 8), 330);
-
-		up.addFrame(runningSS.getSprite(4, 8), 330);
-
-		up.addFrame(runningSS.getSprite(5, 8), 330);
-
-		up.addFrame(runningSS.getSprite(6, 8), 330);
-
-		up.addFrame(runningSS.getSprite(7, 8), 330);
-
-		up.addFrame(runningSS.getSprite(8, 8), 330);
-
-		down = new Animation();
-
-		down.setAutoUpdate(false);
-
-		down.addFrame(runningSS.getSprite(0, 10), 330);
-
-		down.addFrame(runningSS.getSprite(1, 10), 330);
-
-		down.addFrame(runningSS.getSprite(2, 10), 330);
-
-		down.addFrame(runningSS.getSprite(3, 10), 330);
-
-		down.addFrame(runningSS.getSprite(4, 10), 330);
-
-		down.addFrame(runningSS.getSprite(5, 10), 330);
-
-		down.addFrame(runningSS.getSprite(6, 10), 330);
-
-		down.addFrame(runningSS.getSprite(7, 10), 330);
-
-		down.addFrame(runningSS.getSprite(8, 10), 330);
-
-		left = new Animation();
-
-		left.setAutoUpdate(false);
-
-		left.addFrame(runningSS.getSprite(0, 9), 330);
-
-		left.addFrame(runningSS.getSprite(1, 9), 330);
-
-		left.addFrame(runningSS.getSprite(2, 9), 330);
-
-		left.addFrame(runningSS.getSprite(3, 9), 330);
-
-		left.addFrame(runningSS.getSprite(4, 9), 330);
-
-		left.addFrame(runningSS.getSprite(5, 9), 330);
-
-		left.addFrame(runningSS.getSprite(6, 9), 330);
-
-		left.addFrame(runningSS.getSprite(7, 9), 330);
-
-		left.addFrame(runningSS.getSprite(8, 9), 330);
-
-		right = new Animation();
-
-		right.setAutoUpdate(false);
-
-		right.addFrame(runningSS.getSprite(0, 11), 330);
-
-		right.addFrame(runningSS.getSprite(1, 11), 330);
-
-		right.addFrame(runningSS.getSprite(2, 11), 330);
-
-		right.addFrame(runningSS.getSprite(3, 11), 330);
-
-		right.addFrame(runningSS.getSprite(4, 11), 330);
-
-		right.addFrame(runningSS.getSprite(5, 11), 330);
-
-		right.addFrame(runningSS.getSprite(6, 11), 330);
-
-		right.addFrame(runningSS.getSprite(7, 11), 330);
-
-		right.addFrame(runningSS.getSprite(8, 11), 330);
-
-		wait = new Animation();
-
-		wait.setAutoUpdate(true);
-
-		wait.addFrame(runningSS.getSprite(0, 14), 733);
-
-		wait.addFrame(runningSS.getSprite(1, 14), 733);
-
-		wait.addFrame(runningSS.getSprite(2, 14), 733);
-
-		wait.addFrame(runningSS.getSprite(3, 14), 733);
-
-		// wait.addFrame(runningSS.getSprite(2, 14), 733);
-
-		// wait.addFrame(runningSS.getSprite(5, 14), 333);
-
-		sprite = wait;
+		
 
 		// *****************************************************************
 
@@ -283,8 +172,10 @@ public class Unwavering3 extends BasicGameState {
 		// System.out.println("Number of tile layers: "
 		// +grassMap.getLayerCount());
 
-		System.out.println("The grassmap is " + grassMap.getWidth() + "by "
-				+ grassMap.getHeight());
+                
+                //this says the size of the set map
+//		System.out.println("The grassmap is " + grassMap.getWidth() + "by "
+//				+ grassMap.getHeight());
 
 		for (int xAxis = 0; xAxis < grassMap.getWidth(); xAxis++) {
 
@@ -304,11 +195,11 @@ public class Unwavering3 extends BasicGameState {
 				String value = grassMap.getTileProperty(tileID,
 
 				"blocked", "false");
-
+//                              this checks what is blocked and not blocked in the chat
 				if ("true".equals(value)) {
 
-					System.out.println("The tile at x " + xAxis + " andy axis "
-							+ yAxis + " is blocked.");
+//					System.out.println("The tile at x " + xAxis + " andy axis "
+//							+ yAxis + " is blocked.");
 
 					blocked.blocked[xAxis][yAxis] = true;
 
@@ -318,7 +209,8 @@ public class Unwavering3 extends BasicGameState {
 
 		}
 
-		System.out.println("Array length" + blocked.blocked[0].length);
+                //another check for the size of boxes
+		//System.out.println("Array length" + blocked.blocked[0].length);
 
 		// A remarkably similar process for finding hostiles
 
@@ -407,7 +299,7 @@ public class Unwavering3 extends BasicGameState {
 
 		// System.out.println("Current X: " +player.x + " \n Current Y: "+ y);
 
-		sprite.draw((int) Player.x, (int) Player.y);
+		player.sprite.draw((int) Player.x, (int) Player.y);
 		
 		//g.drawString("x: " + (int)Player.x + "y: " +(int)Player.y , Player.x, Player.y - 10);
 
@@ -487,13 +379,13 @@ public class Unwavering3 extends BasicGameState {
 
 		if (input.isKeyDown(Input.KEY_UP)) {
 
-			sprite = up;
+			player.sprite = up;
 
 			float fdsc = (float) (fdelta - (SIZE * .15));
 
 			if (!(isBlocked(Player.x, Player.y - fdelta) || isBlocked((float) (Player.x + SIZE + 1.5), Player.y - fdelta))) {
 
-				sprite.update(delta);
+				player.sprite.update(delta);
 
 				// The lower the delta the slower the sprite will animate.
 
@@ -503,13 +395,13 @@ public class Unwavering3 extends BasicGameState {
 
 		} else if (input.isKeyDown(Input.KEY_DOWN)) {
 
-			sprite = down;
+			player.sprite = down;
 
 			if (!isBlocked(Player.x, Player.y + SIZE + fdelta)
 
 			|| !isBlocked(Player.x + SIZE - 1, Player.y + SIZE + fdelta)) {
 
-				sprite.update(delta);
+				player.sprite.update(delta);
 
 				Player.y += fdelta;
 
@@ -517,13 +409,13 @@ public class Unwavering3 extends BasicGameState {
 
 		} else if (input.isKeyDown(Input.KEY_LEFT)) {
 
-			sprite = left;
+			player.sprite = left;
 
 			if (!(isBlocked(Player.x - fdelta, Player.y) || isBlocked(Player.x
 
 			- fdelta, Player.y + SIZE - 1))) {
 
-				sprite.update(delta);
+				player.sprite.update(delta);
 
 				Player.x -= fdelta;
 
@@ -531,7 +423,7 @@ public class Unwavering3 extends BasicGameState {
 
 		} else if (input.isKeyDown(Input.KEY_RIGHT)) {
 
-			sprite = right;
+			player.sprite = right;
 
 			// the boolean-kludge-implementation
 
@@ -541,7 +433,7 @@ public class Unwavering3 extends BasicGameState {
 					Player.y) || isBlocked(Player.x + SIZE + fdelta, Player.y
 							+ SIZE - 1)))) {
 
-				sprite.update(delta);
+				player.sprite.update(delta);
 
 				Player.x += fdelta;
 
