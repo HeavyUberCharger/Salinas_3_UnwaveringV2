@@ -137,8 +137,8 @@ public class Unwavering extends BasicGameState {
 		grassMap = new TiledMap("res/d1.tmx");
 
 		// Ongoing checks are useful
-
-		System.out.println("Tile map is this wide: " + grassMap.getWidth());
+                //this checks how large the map is
+		//System.out.println("Tile map is this wide: " + grassMap.getWidth());
 
 		camera = new Camera(gc, grassMap);
 
@@ -283,8 +283,10 @@ public class Unwavering extends BasicGameState {
 		// System.out.println("Number of tile layers: "
 		// +grassMap.getLayerCount());
 
-		System.out.println("The grassmap is " + grassMap.getWidth() + "by "
-				+ grassMap.getHeight());
+                
+                //this says the size of the set map
+//		System.out.println("The grassmap is " + grassMap.getWidth() + "by "
+//				+ grassMap.getHeight());
 
 		for (int xAxis = 0; xAxis < grassMap.getWidth(); xAxis++) {
 
@@ -305,10 +307,11 @@ public class Unwavering extends BasicGameState {
 
 				"blocked", "false");
 
+                                //this checks what is blocked and not blocked in the chat
 				if ("true".equals(value)) {
 
-					System.out.println("The tile at x " + xAxis + " andy axis "
-							+ yAxis + " is blocked.");
+//					System.out.println("The tile at x " + xAxis + " andy axis "
+//							+ yAxis + " is blocked.");
 
 					blocked1.blocked[xAxis][yAxis] = true;
 
@@ -317,8 +320,9 @@ public class Unwavering extends BasicGameState {
 			}
 
 		}
-
-		System.out.println("Array length" + blocked1.blocked[0].length);
+                
+                //another check for the size of boxes
+		//System.out.println("Array length" + blocked1.blocked[0].length);
 
 		// A remarkably similar process for finding hostiles
 
